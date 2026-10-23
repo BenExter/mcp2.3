@@ -1,0 +1,177 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.creature.fly": {
+      "animation_length": 2,
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.0": {
+              "vector": [
+                0,
+                180,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "2.0": {
+              "vector": [
+                0,
+                360,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.attack": {
+      "animation_length": 0.5,
+      "loop": false,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.5": {
+              "vector": [
+                10,
+                45,
+                15
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.special": {
+      "animation_length": 0.5,
+      "loop": false,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.5": {
+              "vector": [
+                10,
+                45,
+                15
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.shield": {
+      "animation_length": 0.5,
+      "loop": false,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.5": {
+              "vector": [
+                10,
+                45,
+                15
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.summon": {
+      "animation_length": 0.5,
+      "loop": false,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.5": {
+              "vector": [
+                10,
+                45,
+                15
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.walk": {
+      "animation_length": 2,
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.0": {
+              "vector": [
+                0,
+                180,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "2.0": {
+              "vector": [
+                0,
+                360,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    }
+  }
+}

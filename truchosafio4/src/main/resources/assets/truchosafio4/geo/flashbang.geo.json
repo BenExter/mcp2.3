@@ -1,0 +1,108 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.truchosafio4.flashbang",
+        "texture_width": 256,
+        "texture_height": 128,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [
+          0,
+          2.0,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "body",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "parent": "root",
+          "cubes": [
+            {
+              "origin": [
+                -12,
+                0,
+                0
+              ],
+              "size": [
+                24,
+                56,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    64,
+                    128
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    64,
+                    0
+                  ],
+                  "uv_size": [
+                    64,
+                    128
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                0,
+                0,
+                -4
+              ],
+              "size": [
+                0,
+                56,
+                8
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    128,
+                    0
+                  ],
+                  "uv_size": [
+                    64,
+                    128
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    192,
+                    0
+                  ],
+                  "uv_size": [
+                    64,
+                    128
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

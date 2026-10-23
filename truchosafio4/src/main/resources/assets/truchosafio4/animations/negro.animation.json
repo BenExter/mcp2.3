@@ -1,0 +1,757 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.creature.fly": {
+      "animation_length": 1.4,
+      "loop": true,
+      "bones": {
+        "torso": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                1.5,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_left": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                -12
+              ],
+              "easing": "catmullrom"
+            },
+            "0.35": {
+              "vector": [
+                0,
+                0,
+                17
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                0,
+                -12
+              ],
+              "easing": "catmullrom"
+            },
+            "1.05": {
+              "vector": [
+                0,
+                0,
+                17
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                0,
+                -12
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_right": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                12
+              ],
+              "easing": "catmullrom"
+            },
+            "0.35": {
+              "vector": [
+                0,
+                0,
+                -17
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                0,
+                12
+              ],
+              "easing": "catmullrom"
+            },
+            "1.05": {
+              "vector": [
+                0,
+                0,
+                -17
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                0,
+                12
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                -10,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                10,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                -10,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.attack": {
+      "animation_length": 0.8,
+      "loop": false,
+      "bones": {
+        "wing_left": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.2": {
+              "vector": [
+                0,
+                0,
+                -46
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                20
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_right": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.2": {
+              "vector": [
+                0,
+                0,
+                46
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                -20
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                23,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.special": {
+      "animation_length": 1.5,
+      "loop": false,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.4": {
+              "vector": [
+                -25,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.0": {
+              "vector": [
+                15,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.5": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "torso": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                15
+              ],
+              "easing": "catmullrom"
+            },
+            "1.2": {
+              "vector": [
+                0,
+                0,
+                -15
+              ],
+              "easing": "catmullrom"
+            },
+            "1.5": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_left": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.5": {
+              "vector": [
+                0,
+                0,
+                -70
+              ],
+              "easing": "catmullrom"
+            },
+            "1.5": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_right": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.5": {
+              "vector": [
+                0,
+                0,
+                70
+              ],
+              "easing": "catmullrom"
+            },
+            "1.5": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.shield": {
+      "animation_length": 0.8,
+      "loop": false,
+      "bones": {
+        "wing_left": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.2": {
+              "vector": [
+                0,
+                0,
+                -46
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                20
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_right": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.2": {
+              "vector": [
+                0,
+                0,
+                46
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                -20
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                23,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.summon": {
+      "animation_length": 0.8,
+      "loop": false,
+      "bones": {
+        "wing_left": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.2": {
+              "vector": [
+                0,
+                0,
+                -46
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                20
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_right": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.2": {
+              "vector": [
+                0,
+                0,
+                46
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                0,
+                0,
+                -20
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.45": {
+              "vector": [
+                23,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    },
+    "animation.creature.walk": {
+      "animation_length": 1.4,
+      "loop": true,
+      "bones": {
+        "torso": {
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                1.5,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_left": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                -12
+              ],
+              "easing": "catmullrom"
+            },
+            "0.35": {
+              "vector": [
+                0,
+                0,
+                17
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                0,
+                -12
+              ],
+              "easing": "catmullrom"
+            },
+            "1.05": {
+              "vector": [
+                0,
+                0,
+                17
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                0,
+                -12
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "wing_right": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                12
+              ],
+              "easing": "catmullrom"
+            },
+            "0.35": {
+              "vector": [
+                0,
+                0,
+                -17
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                0,
+                12
+              ],
+              "easing": "catmullrom"
+            },
+            "1.05": {
+              "vector": [
+                0,
+                0,
+                -17
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                0,
+                12
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                -10,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "0.7": {
+              "vector": [
+                0,
+                10,
+                0
+              ],
+              "easing": "catmullrom"
+            },
+            "1.4": {
+              "vector": [
+                0,
+                -10,
+                0
+              ],
+              "easing": "catmullrom"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "natural_spawning_enabled": false,
+  "spawn_check_interval_ticks": 120,
+  "min_distance_from_players": 26,
+  "max_distance_from_players": 65,
+  "max_per_dimension": 26,
+  "max_per_player": 6,
+  "protect_world_spawn_radius": 100,
+  "mobs": {
+    "flashbang": {
+      "enabled": true,
+      "natural_spawn_enabled": false,
+      "dimension_whitelist": [
+        "minecraft:overworld"
+      ],
+      "dimension_enabled": {
+        "minecraft:overworld": false,
+        "minecraft:the_nether": false
+      },
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:forest",
+        "minecraft:savanna"
+      ],
+      "spawn_weight": 8,
+      "spawn_chance": 0.18,
+      "min_group_size": 1,
+      "max_group_size": 1,
+      "max_alive_per_dimension": 4,
+      "require_darkness": true,
+      "min_y": -32,
+      "max_y": 240
+    },
+    "rojo": {
+      "enabled": true,
+      "natural_spawn_enabled": false,
+      "dimension_whitelist": [
+        "minecraft:overworld"
+      ],
+      "dimension_enabled": {
+        "minecraft:overworld": false,
+        "minecraft:the_nether": false
+      },
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:forest"
+      ],
+      "spawn_weight": 5,
+      "spawn_chance": 0.18,
+      "min_group_size": 1,
+      "max_group_size": 2,
+      "max_alive_per_dimension": 4,
+      "require_darkness": true,
+      "min_y": -32,
+      "max_y": 240
+    },
+    "negro": {
+      "enabled": true,
+      "natural_spawn_enabled": false,
+      "dimension_whitelist": [
+        "minecraft:overworld"
+      ],
+      "dimension_enabled": {
+        "minecraft:overworld": false,
+        "minecraft:the_nether": false
+      },
+      "biomes": [
+        "minecraft:deep_dark",
+        "minecraft:dripstone_caves"
+      ],
+      "spawn_weight": 2,
+      "spawn_chance": 0.18,
+      "min_group_size": 1,
+      "max_group_size": 1,
+      "max_alive_per_dimension": 4,
+      "require_darkness": true,
+      "min_y": -32,
+      "max_y": 240
+    },
+    "amarillo": {
+      "enabled": true,
+      "natural_spawn_enabled": false,
+      "dimension_whitelist": [
+        "minecraft:overworld"
+      ],
+      "dimension_enabled": {
+        "minecraft:overworld": false,
+        "minecraft:the_nether": false
+      },
+      "biomes": [
+        "minecraft:forest",
+        "minecraft:dark_forest"
+      ],
+      "spawn_weight": 6,
+      "spawn_chance": 0.18,
+      "min_group_size": 1,
+      "max_group_size": 2,
+      "max_alive_per_dimension": 4,
+      "require_darkness": true,
+      "min_y": -32,
+      "max_y": 240
+    },
+    "blanco": {
+      "enabled": true,
+      "natural_spawn_enabled": false,
+      "dimension_whitelist": [
+        "minecraft:overworld"
+      ],
+      "dimension_enabled": {
+        "minecraft:overworld": false,
+        "minecraft:the_nether": false
+      },
+      "biomes": [
+        "minecraft:plains",
+        "minecraft:forest"
+      ],
+      "spawn_weight": 23,
+      "spawn_chance": 0.18,
+      "min_group_size": 2,
+      "max_group_size": 5,
+      "max_alive_per_dimension": 12,
+      "require_darkness": true,
+      "min_y": -32,
+      "max_y": 240
+    }
+  },
+  "qumara": {
+    "natural_spawn_enabled": false,
+    "max_health": 1000,
+    "allow_admin_control": true,
+    "poison_aura_enabled": true,
+    "mechanisms": 14,
+    "summon_raptors": true
+  }
+}

@@ -1,0 +1,38 @@
+name: Truchosafio4 - compilar y descargar
+on:
+  workflow_dispatch:
+  push:
+    branches: ["entregas/truchosafio4-0.2.0-dev"]
+    paths: ["truchosafio4/**", ".github/workflows/truchosafio4-entrega.yml"]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: truchosafio4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Compilar mod y ejecutar comprobaciones
+        run: bash gradlew --no-daemon --max-workers=2 build
+      - name: Exportar modelos editables
+        run: python3 tools/exportar_blockbench.py
+      - name: Preparar descarga
+        run: |
+          mkdir -p entrega
+          cp build/libs/truchosafio4-hardcore-0.2.0-dev.jar entrega/
+          cp INFORME_VALIDACION.md entrega/
+          zip -qr entrega/modelos-blockbench.zip modelos-blockbench
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Truchosafio4-0.2.0-dev
+          path: truchosafio4/entrega/
+          if-no-files-found: error

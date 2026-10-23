@@ -1,0 +1,1 @@
+{"schemaVersion":1,"id":"truchosafio4_smoketest","version":"1.0.0","name":"Truchosafio4 server smoke tests (development only)","environment":"server","entrypoints":{"main":["dev.truchosafio4.smoke.ServerSmoke"]},"depends":{"truchosafio4":"*","fabric-api":"*"}}
