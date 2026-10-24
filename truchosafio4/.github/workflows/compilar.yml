@@ -1,4 +1,4 @@
-name: Compilar Truchosafio4 1.21.1
+name: Compilar Truchosafio4 Flashbang 1.21.1
 on:
   workflow_dispatch:
   push:

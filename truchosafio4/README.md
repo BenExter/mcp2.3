@@ -1,58 +1,34 @@
-# Truchosafío 4 — Hardcore Creatures · 0.2.0-dev
+# Truchosafío 4 — Flashbang · 0.3.0-flashbang
 
-Mod Java para Minecraft 1.21.1, Fabric y GeckoLib 4. No es un datapack.
+Mod para Minecraft Java 1.21.1, Fabric y Java 21. Esta edición contiene únicamente Flashbang.
 
-**Estado: compilación Gradle y remapeo Fabric completados. El servidor dedicado arrancó; una prueba de destrucción de mecanismos falló y queda pendiente de diagnóstico. Versión de desarrollo, sin validación gráfica ni multijugador.** Consulta `INFORME_VALIDACION.md`.
+Conserva su aspecto 2D, textura de frente/espalda/perfiles, sonido, fogonazo de pantalla y daño. La lógica de la criatura, el overlay, la textura y el modelo mantienen el comportamiento de la entrega anterior. Se eliminaron las demás criaturas, objetos, sistemas y controles.
 
-## Funcionalidad en el código
+## Instalación
 
-- Flashbang: dos planos ortogonales de grosor exactamente cero con regiones distintas de frente, espalda y ambos perfiles; geometría orientada, no billboard. Es arte 2D en dos tarjetas cruzadas, no un volumen sólido. Fogonazo, overlay con desvanecimiento, sonido y daño resueltos en servidor. Falta comprobar caras, orientación, transparencia e impacto visual dentro de Minecraft.
-- Rojo: persecución y embestida con trayectoria sostenida y detección de proximidad durante el desplazamiento.
-- Negro: roba hasta siete corazones máximos por UUID, con cooldown; almacenamiento por mundo y reaplicación al entrar o reaparecer. Escritura atómica y rechazo de datos dañados, sin sustituir los sistemas de vidas de otros mods.
-- Amarillo: posesión temporal con invisibilidad del fantasma, náusea, lentitud y marca; hasta dos saltos a jugadores cercanos con línea de visión, demora e inmunidad temporal. No toma el teclado ni provoca ataques PvP del huésped. Libera el estado al morir, desconectarse, cambiar de dimensión o agotar el tiempo.
-- Blanco: comparte objetivo entre miembros próximos y alterna rodeo con aproximación de ataque. La aparición natural permite grupos.
-- Qumara: jefe de 1000 puntos de vida por defecto (máximo configurable 1024 por el atributo vanilla), control OP nivel 2, IA apagada durante el control, movimiento por paquetes, pisotón rompeescudos, vacío, escudo de 14 mecanismos y rugido que invoca raptores. Aura venenosa configurable, barra de jefe, partículas y fases de escudo persistidas.
-- Los 14 mecanismos orbitan al jefe. La inmunidad depende de los mecanismos vivos registrados y no de un conteo de entidades en chunks cargados. Se rompe al destruir el último; no se regenera en el mismo jefe.
-- Ocho modelos GeckoLib, texturas del proyecto fuente, animaciones de locomoción y habilidades; marcha articulada de Qumara y raptor. Ocho proyectos `.bbmodel` derivados con textura incrustada y animaciones.
-- Aparición JSON por especie/dimensión/bioma, con todos los spawns naturales inicialmente desactivados. Respeta dificultad Pacífico, `doMobSpawning`, distancia a jugadores, chunks cargados, colisiones y límites de entidades cargadas por dimensión y alrededor de cada jugador.
-- No registra ninguna dimensión del Limbo.
-- No implementa ni recrea el ritual de resurrección con fogata/cuchara. El usuario indica que ya existe en su instalación.
+Reemplaza el JAR anterior por `truchosafio4-flashbang-0.3.0-flashbang.jar` en `mods/`, en clientes y servidor. Instala Fabric API para 1.21.1 y GeckoLib 4.7.7. Utiliza una sola versión de Truchosafío a la vez; el identificador sigue siendo `truchosafio4`.
 
-## Compilar
+## Invocación y configuración
 
-Requisitos: JDK 21 completo (no solamente JRE), Python 3 para las comprobaciones y acceso a los repositorios oficiales declarados en Gradle.
+- `/truchosafio spawn flashbang`
+- `/truchosafio spawn flashbang minecraft:the_nether ~ ~ ~`
+- `/summon truchosafio4:flashbang`
+- `/truchosafio natural flashbang overworld on` o `off`
+- `/truchosafio natural flashbang nether on` o `off`
+- `/truchosafio reload`
 
-Linux/macOS: `bash gradlew --no-daemon --max-workers=2 build`.
-Windows: `gradlew.bat build` con JDK 21 y Python 3 disponibles. El paso `validateResources` usa `python3`; puede ejecutarse en WSL o ajustar la instalación de Python para ofrecer ese ejecutable.
+Los comandos propios requieren OP nivel 2. También se incluye su huevo de invocación en creativo.
 
-El JAR esperado tras una compilación exitosa es `build/libs/truchosafio4-hardcore-0.2.0-dev.jar`. El archivo `-sources.jar` es código fuente, no un mod ejecutable. Instalar Fabric API y GeckoLib tanto en servidor como en clientes. No se incluyen dependencias ni DEDsafío en los paquetes fuente.
+El spawn natural empieza desactivado. La configuración está en `config/truchosafio4.json`; otras dimensiones existentes y biomas pueden configurarse por sus identificadores JSON. Al leer una configuración de una entrega anterior, solo se conserva la regla de Flashbang en memoria; los ajustes eliminados no se ejecutan y desaparecen al guardar la configuración mediante los comandos.
 
-En este entorno cloud: `bash tools/instalar_jdk.sh`, `source tools/entorno.sh`, después la orden de Gradle anterior. Los scripts respetan la verificación TLS y los checksums. `tools/comprobar_local.sh` ejecuta las comprobaciones que no necesitan Minecraft ni Fabric.
+## Compilar y comprobar
 
-## Administración
+Con JDK 21 y Python 3: `bash gradlew --no-daemon --max-workers=2 clean build`.
 
-OP nivel 2:
+En Windows: `gradlew.bat clean build`, con Python disponible como `python3` para la validación de recursos.
 
-- `/truchosafio spawn flashbang|rojo|negro|amarillo|blanco|qumara|raptor`
-- `/truchosafio spawn rojo minecraft:overworld ~ ~ ~`
-- `/truchosafio natural flashbang overworld on` y `off`; también `nether` y las otras especies.
-- `/truchosafio reload` valida el JSON y conserva la configuración activa si la nueva es inválida.
-- `/qumara spawn`, `/qumara control` (jefe más cercano), `/qumara release`.
-- `/truchosafio qumara aura on|off`, mientras se controla el jefe.
-- `/truchosafio hearts get <jugador>` y `/truchosafio hearts restore <jugador> <cantidad>`.
+`build` incluye la integridad estática de recursos y la carga mediante los cargadores reales de GeckoLib. `runSmokeServer` ejecuta las pruebas de integración en un servidor Fabric de desarrollo separado (`run-smoke/`). Para repetirlas, utiliza Java 21, una configuración de servidor de prueba en esa carpeta, y acepta la EULA de Minecraft en su archivo `eula.txt` antes de ejecutarlas. La configuración usada está en `config-ejemplo/servidor-pruebas.properties`. La prueba optativa de servidor está excluida del JAR distribuido.
 
-Configuración: `config/truchosafio4.json`; ejemplo en `config-ejemplo/`. Los comandos de aparición manual ignoran el interruptor de aparición natural. Los comandos abreviados de spawn natural cubren Overworld y Nether; otras dimensiones existentes se configuran por sus identificadores JSON.
+El modelo editable está en `modelos-blockbench/flashbang.bbmodel`, con textura y animaciones incrustadas. Los recursos canónicos de juego están en `src/main/resources/assets/truchosafio4/`. El modelo y las tres animaciones se pueden volver a exportar con `python3 tools/exportar_blockbench.py`.
 
-Qumara: WASD, clic izquierdo (pisotón), clic derecho (vacío), R (escudo), F (raptores), Shift (desmontar). R/F son reasignables. Los mixins cliente interceptan ataque/uso/minado durante la montura; desactivan el intercambio vanilla de manos durante el control. Debe comprobarse la coexistencia de teclas con otros mods.
-
-## Modelos editables
-
-Abre `modelos-blockbench/*.bbmodel` en Blockbench. Se exportan mediante `python3 tools/exportar_blockbench.py`; contienen textura y keyframes. La apertura y exportación en la interfaz de Blockbench no se han probado aquí.
-
-Los recursos canónicos del juego son `src/main/resources/assets/truchosafio4/geo/*.geo.json`, `animations/*.animation.json` y `textures/`. También puedes importar el modelo Bedrock directamente e importar la animación con el complemento GeckoLib correspondiente. No reemplaces los archivos de juego con un `.bbmodel`.
-
-## Compatibilidad DEDsafío
-
-El objetivo actualizado por el usuario es DEDsafío 4 Fan 1.3.0 para 1.21.1. El adjunto excede el límite de transferencia de 32 MiB de la herramienta y no pudo inspeccionarse. **Compatibilidad no verificada** con 1.3.0 ni 1.2.0. No hay integración especulativa con sus comandos internos, baneos, resurrección o dimensiones. Se requiere una prueba conjunta con el JAR real y sus dependencias.
-
-Las texturas y el sonido existentes se conservan del ZIP suministrado; no se copiaron recursos de DEDsafío. El código original declaraba MIT; los permisos del sonido original deben conservarse según su procedencia.
+Consulta `INFORME_VALIDACION.md` para los resultados exactos y las pruebas de cliente pendientes. La compatibilidad con DEDsafío no se ha verificado.

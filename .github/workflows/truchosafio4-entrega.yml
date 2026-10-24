@@ -1,8 +1,8 @@
-name: Truchosafio4 - compilar y descargar
+name: Truchosafio4 Flashbang - compilar y descargar
 on:
   workflow_dispatch:
   push:
-    branches: ["entregas/truchosafio4-0.2.0-dev"]
+    branches: ["entregas/truchosafio4-flashbang"]
     paths: ["truchosafio4/**", ".github/workflows/truchosafio4-entrega.yml"]
 permissions:
   contents: read
@@ -28,11 +28,11 @@ jobs:
       - name: Preparar descarga
         run: |
           mkdir -p entrega
-          cp build/libs/truchosafio4-hardcore-0.2.0-dev.jar entrega/
+          cp build/libs/truchosafio4-flashbang-0.3.0-flashbang.jar entrega/
           cp INFORME_VALIDACION.md entrega/
           zip -qr entrega/modelos-blockbench.zip modelos-blockbench
       - uses: actions/upload-artifact@v4
         with:
-          name: Truchosafio4-0.2.0-dev
+          name: Truchosafio4-0.3.0-flashbang
           path: truchosafio4/entrega/
           if-no-files-found: error

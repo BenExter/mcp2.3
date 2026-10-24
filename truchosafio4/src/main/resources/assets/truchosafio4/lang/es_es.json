@@ -1,23 +1,4 @@
 {
   "entity.truchosafio4.flashbang": "Flashbang",
-  "entity.truchosafio4.rojo": "Fantasma Rojo",
-  "entity.truchosafio4.negro": "Fantasma Negro",
-  "entity.truchosafio4.amarillo": "Fantasma Amarillo",
-  "entity.truchosafio4.blanco": "Fantasma Blanco",
-  "entity.truchosafio4.qumara": "Qumara, Coloso Primordial",
-  "entity.truchosafio4.raptor": "Raptor Primitivo",
-  "entity.truchosafio4.mecanismo": "Mecanismo Primordial",
-  "category.truchosafio4.boss": "Qumara (administrador)",
-  "key.truchosafio4.shield": "Escudo de Qumara",
-  "key.truchosafio4.raptors": "Invocar raptores de Qumara",
-  "item.truchosafio4.flashbang_spawn_egg": "Huevo de Flashbang",
-  "item.truchosafio4.rojo_spawn_egg": "Huevo de Fantasma Rojo",
-  "item.truchosafio4.negro_spawn_egg": "Huevo de Fantasma Negro",
-  "item.truchosafio4.amarillo_spawn_egg": "Huevo de Fantasma Amarillo",
-  "item.truchosafio4.blanco_spawn_egg": "Huevo de Fantasma Blanco",
-  "item.truchosafio4.qumara_spawn_egg": "Huevo de Qumara",
-  "item.truchosafio4.esencia_roja": "Esencia Roja",
-  "item.truchosafio4.esencia_negra": "Esencia Negra",
-  "item.truchosafio4.esencia_amarilla": "Esencia Amarilla",
-  "item.truchosafio4.esencia_blanca": "Esencia Blanca"
+  "item.truchosafio4.flashbang_spawn_egg": "Huevo de Flashbang"
 }

@@ -23,8 +23,7 @@ public final class ModConfig {
     public int max_per_player = 6;
     public int protect_world_spawn_radius = 100;
     public Map<String, MobRule> mobs = new LinkedHashMap<>();
-    public BossRules qumara = new BossRules();
-    public static final String[] KINDS = {"flashbang", "rojo", "negro", "amarillo", "blanco"};
+    public static final String[] KINDS = {"flashbang"};
     public static final class MobRule {
         public boolean enabled = true;
         public boolean natural_spawn_enabled = false;
@@ -46,14 +45,6 @@ public final class ModConfig {
                 && (biomes == null || biomes.isEmpty() || biomes.contains(biome));
         }
     }
-    public static final class BossRules {
-        public boolean natural_spawn_enabled = false;
-        public int max_health = 1000;
-        public boolean allow_admin_control = true;
-        public boolean poison_aura_enabled = true;
-        public int mechanisms = 14;
-        public boolean summon_raptors = true;
-    }
     private static Path file() { return FabricLoader.getInstance().getConfigDir().resolve("truchosafio4.json"); }
     public static void load() {
         try {
@@ -63,9 +54,10 @@ public final class ModConfig {
                 ACTIVE = defaults(); save(); return;
             }
             ModConfig parsed = GSON.fromJson(Files.readString(path), ModConfig.class);
-            if (parsed == null || parsed.mobs == null || parsed.qumara == null)
+            if (parsed == null || parsed.mobs == null)
                 throw new IllegalArgumentException("La configuracion esta incompleta");
             for (String key : KINDS) parsed.mobs.putIfAbsent(key, defaults().mobs.get(key));
+            parsed.mobs.keySet().retainAll(List.of(KINDS));
             parsed.validate();
             ACTIVE = parsed;
         } catch (IOException | RuntimeException e) {
@@ -78,8 +70,6 @@ public final class ModConfig {
             max_per_dimension<1 || max_per_dimension>256 || max_per_player<1 || max_per_player>64 ||
             protect_world_spawn_radius<0 || protect_world_spawn_radius>100000)
             throw new IllegalArgumentException("Limites de spawn invalidos");
-        if(qumara==null || qumara.max_health<1 || qumara.max_health>1024 || qumara.mechanisms!=14)
-            throw new IllegalArgumentException("Qumara requiere vida positiva y exactamente 14 mecanismos");
         for(String kind : KINDS) {
             MobRule r=mobs.get(kind);
             if(r==null || r.dimension_whitelist==null || r.dimension_enabled==null ||
@@ -96,9 +86,7 @@ public final class ModConfig {
             MobRule rule = new MobRule();
             rule.dimension_enabled.put("minecraft:overworld", false);
             rule.dimension_enabled.put("minecraft:the_nether", false);
-            rule.spawn_weight = switch (name) {case "negro" -> 2; case "blanco" -> 23; default -> 8;};
-            rule.max_group_size = "blanco".equals(name) ? 5 : 1;
-            rule.max_alive_per_dimension = "blanco".equals(name) ? 12 : 4;
+            rule.max_alive_per_dimension = 4;
             c.mobs.put(name, rule);
         }
         return c;

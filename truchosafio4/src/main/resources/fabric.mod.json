@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "truchosafio4",
   "version": "${version}",
-  "name": "Truchosafío 4 — Hardcore Creatures",
-  "description": "Flashbang 2D, cuatro fantasmas, Qumara y aparicion configurable. Proyecto en desarrollo.",
+  "name": "Truchosafío 4 — Flashbang",
+  "description": "Únicamente Flashbang 2D: fogonazo, daño y aparición configurable por dimensión.",
   "authors": [
     "Proyecto Truchosafío 4"
   ],
@@ -23,11 +23,5 @@
     "java": ">=21",
     "fabric-api": "*",
     "geckolib": ">=4.7.0"
-  },
-  "suggests": {
-    "ruleta": "*"
-  },
-  "mixins": [
-    "truchosafio4.client.mixins.json"
-  ]
+  }
 }

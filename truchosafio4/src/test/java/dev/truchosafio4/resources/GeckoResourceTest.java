@@ -24,7 +24,7 @@ public final class GeckoResourceTest {
                 models++;animations+=parsed.animations().size();
             }
         }
-        if(models!=8 || animations!=48)throw new AssertionError("Unexpected model/animation count");
+        if(models!=1 || animations!=3)throw new AssertionError("Unexpected model/animation count");
         System.out.println("PASS: actual GeckoLib loaders baked "+models+" models and "+animations+" animations; no GPU or game client tested");
     }
 }

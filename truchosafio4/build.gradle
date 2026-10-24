@@ -24,15 +24,10 @@ tasks.withType(JavaCompile).configureEach {
 }
 java { withSourcesJar(); sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
 
-tasks.register('shieldLogicTest', JavaExec) {
-    dependsOn testClasses
-    classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'dev.truchosafio4.logic.MechanismShieldTest'
-}
 tasks.register('validateResources', Exec) {
     commandLine 'python3', 'VALIDAR_RECURSOS.py'
 }
-tasks.named('check') { dependsOn 'shieldLogicTest', 'validateResources' }
+tasks.named('check') { dependsOn 'validateResources' }
 tasks.register('geckoResourceTest', JavaExec) {
     dependsOn testClasses
     classpath = sourceSets.test.runtimeClasspath
@@ -63,3 +58,17 @@ loom {
         }
     }
 }
+
+tasks.named('runSmokeServer') {
+    doFirst { delete 'run-smoke/SMOKE_PASS.txt', 'run-smoke/SMOKE_FAIL.txt' }
+    doLast {
+        if (!file('run-smoke/SMOKE_PASS.txt').exists() || file('run-smoke/SMOKE_FAIL.txt').exists()) {
+            throw new GradleException('Flashbang dedicated-server smoke assertions failed; inspect server log')
+        }
+    }
+}
+tasks.register('validateDeliveryJar', Exec) {
+    dependsOn remapJar
+    commandLine 'python3', 'tools/validar_jar.py'
+}
+tasks.named('check') { dependsOn 'validateDeliveryJar' }

@@ -21,11 +21,7 @@ public abstract class AnimatedHostileEntity extends HostileEntity implements Geo
             return PlayState.CONTINUE;
         }));
         registrar.add(new AnimationController<>(this, "ability", state -> PlayState.STOP)
-            .triggerableAnim("attack", RawAnimation.begin().thenPlay("animation.creature.attack"))
-            .triggerableAnim("special", RawAnimation.begin().thenPlay("animation.creature.special"))
-            .triggerableAnim("shield", RawAnimation.begin().thenPlay("animation.creature.shield"))
-            .triggerableAnim("summon", RawAnimation.begin().thenPlay("animation.creature.summon")));
+            .triggerableAnim("special", RawAnimation.begin().thenPlay("animation.creature.special")));
     }
-    protected void animateAttack() { if(!getWorld().isClient) triggerAnim("ability", "attack"); }
     protected void animateSpecial() { if(!getWorld().isClient) triggerAnim("ability", "special"); }
 }

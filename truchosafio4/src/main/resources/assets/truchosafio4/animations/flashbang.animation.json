@@ -35,40 +35,6 @@
         }
       }
     },
-    "animation.creature.attack": {
-      "animation_length": 0.5,
-      "loop": false,
-      "bones": {
-        "body": {
-          "rotation": {
-            "0.0": {
-              "vector": [
-                0,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            },
-            "0.2": {
-              "vector": [
-                -20,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            },
-            "0.5": {
-              "vector": [
-                0,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            }
-          }
-        }
-      }
-    },
     "animation.creature.special": {
       "animation_length": 0.4,
       "loop": false,
@@ -96,74 +62,6 @@
                 1,
                 1,
                 1
-              ],
-              "easing": "catmullrom"
-            }
-          }
-        }
-      }
-    },
-    "animation.creature.shield": {
-      "animation_length": 0.5,
-      "loop": false,
-      "bones": {
-        "body": {
-          "rotation": {
-            "0.0": {
-              "vector": [
-                0,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            },
-            "0.2": {
-              "vector": [
-                -20,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            },
-            "0.5": {
-              "vector": [
-                0,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            }
-          }
-        }
-      }
-    },
-    "animation.creature.summon": {
-      "animation_length": 0.5,
-      "loop": false,
-      "bones": {
-        "body": {
-          "rotation": {
-            "0.0": {
-              "vector": [
-                0,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            },
-            "0.2": {
-              "vector": [
-                -20,
-                0,
-                0
-              ],
-              "easing": "catmullrom"
-            },
-            "0.5": {
-              "vector": [
-                0,
-                0,
-                0
               ],
               "easing": "catmullrom"
             }

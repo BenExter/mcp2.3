@@ -39,4 +39,4 @@ for path in sorted((ASSETS/'geo').glob('*.geo.json')):
   animations.append({'uuid':uid(name+anim_name),'name':anim_name,'loop':'loop' if animation.get('loop') else 'once','override':False,'length':animation['animation_length'],'snapping':20,'animators':animators})
  model={'meta':{'format_version':'4.10','model_format':'bedrock','box_uv':False},'name':name,'model_identifier':'truchosafio4.'+name,'visible_box':[geo['description'].get('visible_bounds_width',4),geo['description'].get('visible_bounds_height',4),geo['description'].get('visible_bounds_offset',[0,0,0])[1]],'resolution':{'width':geo['description']['texture_width'],'height':geo['description']['texture_height']},'elements':elements,'outliner':roots,'textures':[{'name':name+'.png','uuid':uid(name+'/texture'),'id':'0','mode':'bitmap','source':'data:image/png;base64,'+base64.b64encode(texture).decode()}],'animations':animations}
  (OUT/f'{name}.bbmodel').write_text(json.dumps(model,indent=2)+'\n')
-print('Exported 8 editable Blockbench projects with embedded textures and animations')
+print('Exported Flashbang editable Blockbench project with embedded texture and animations')

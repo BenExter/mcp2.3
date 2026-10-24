@@ -1,18 +1,13 @@
 package dev.truchosafio4.system;
-import dev.truchosafio4.Truchosafio4;
 import dev.truchosafio4.config.ModConfig;
 import dev.truchosafio4.registry.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.biome.Biome;
 import java.util.*;
 
 /** Fully dynamic dimension/biome-based spawn. NOT registered as vanilla biome spawn to avoid duplicates. */
@@ -64,7 +59,7 @@ public final class SpawnManager {
         int species=0, all=0, local=0;
         for(net.minecraft.entity.Entity entity : world.iterateEntities()) {
             if(!entity.isAlive())continue;
-            boolean ours=entity.getType()==ModEntities.FLASHBANG || entity instanceof dev.truchosafio4.entity.AbstractGhostEntity;
+            boolean ours=entity.getType()==ModEntities.FLASHBANG;
             if(entity.getType()==expected)species++;
             if(ours){all++;if(entity.squaredDistanceTo(player)<=80*80)local++;}
         }
